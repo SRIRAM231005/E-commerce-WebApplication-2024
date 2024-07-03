@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<center><div style="margin-top: 8%;"><div class="parent1">
+    <div id="id1" style="color: white;">Login Details</div> 
+         <form> 
+         <p class="label">Email ID :</p> 
+         <input type="email" placeholder="email id" class="input" maxlength="30" required> 
+     </br> 
+     <a href="sriram1.html"><input type="submit" id="button1"></a> 
+     </form> 
+</br>
+        <div id="my-signin2"></div>
+        <script>
+        function onSuccess(googleUser) {
+        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+</div></div></center>
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</body>
+</html>
