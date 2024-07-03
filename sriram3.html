@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styletemp.css">
+</head>
+<body>
+    <!--Header-->
+    <div id="parent">
+        <div class="logo"><img src="logo web.png" alt="Comp"></div>
+        <div class="search1">
+            <input type="text" class="search" placeholder="Search Items">
+            <button class="searchbutton" onclick="log2();">
+                <img src="blue mag.png">
+            </button>
+        </div>
+        <div class="newchild2">
+            <a href="cart.html" style="display: flex; align-items: center;justify-content: center; text-decoration: none;">
+                <div style="color: aqua;">Cart</div>
+                <button class="cartIcon"><img src="blucart.png"></button>
+            </a>
+            <span class="spanTag">0</span>      
+        </div>
+    </div>  
+    
+    <!--This contains Product Results and Filter-->
+    <div class="searchElement">
+
+        <!--Filters-->
+        <div class="filters">
+            <div style="padding: 10px; border-bottom: solid 1px rgb(153, 152, 152);">Filters :</div>
+            <div style="padding: 10px; font-size: 17px;  border-bottom: solid 1px rgb(153, 152, 152);">
+                Category 
+                <div class="category-js category"></div>
+            </div>
+            <div style="padding: 10px; font-size: 17px; border-bottom: solid 1px rgb(153, 152, 152);">
+                Price
+                <div class="price-range">
+                    <div style="display: flex; gap: 92px;">
+                        <div class="min-js">min : ₹500</div>
+                        <div class="max-js">max : ₹17,500</div>
+                    </div>
+                    <div class="range-slider"><input type="range" class="ranger" min="500" max="30000" oninput="ranger();"></div>
+                </div>
+            </div>
+            <div style="padding: 10px; font-size: 17px; border-bottom: solid 1px rgb(153, 152, 152);">
+                Deals & Discounts
+                <div class="DandD">
+                    <button class="discount-js discount" onclick="disclist();">Discounts</button>
+                    <ul class="discount-list-js discount-list">
+                        <div><input type="checkbox"> 10% Off or more</div>
+                        <div><input type="checkbox"> 20% Off or more</div>
+                        <div><input type="checkbox"> 30% Off or more</div>
+                        <div><input type="checkbox"> 40% Off or more</div>
+                        <div><input type="checkbox"> 50% Off or more</div>
+                    </ul>
+                    <div><button class="deals">Top Deals</button></div>
+                </div>
+            </div>   
+            <div style="padding: 10px; font-size: 17px; border-bottom: solid 1px rgb(153, 152, 152);">
+                Delivery Day
+                <div class="DandD">
+                    <ul class="discount-list" style="display: block;">
+                        <div><input type="checkbox"> Get it Tomorrow</div>
+                        <div><input type="checkbox"> Get it after 2 Days</div>
+                    </ul>
+                </div>
+            </div>  
+            <div style="padding: 10px; font-size: 17px; border-bottom: solid 1px rgb(153, 152, 152);">
+                Availability
+                <div class="DandD">
+                    <ul class="discount-list" style="display: block;">
+                        <div><input type="checkbox"> Includes Out of Stock</div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--Search Results of Products-->
+        <div id="searchResults">
+            <center><div class="blobBox">
+                <p>Search Anything...</p>
+                <img src="blob1.png" class="blob1">
+                <img src="blob2.png" class="blob2">
+                <img src="blob3.png" class="blob3">
+                <img src="blob4.png" class="blob4">
+            </div></center>
+        </div>
+        <div class="powered">Search Engine Powered By Lunr.js</div>
+    </div>
+    
+    <!--Popup of Added to Cart-->
+    <div class="popup" id="popup">
+        <div class="green"></div>
+        <div style="display: flex; align-items: center; justify-content: center; margin-top: 15px;">
+            <img src="tick.png" style="height: 25px; width: 25px; margin-right: 4px;">
+            <p style="color: rgb(6, 125, 98); font-size: larger;font-weight: 400 ;font-family: 'Poppins',sans-serif;margin-top: 3px;margin-bottom: 0;">Added To Cart</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+    <script src="cart.js"></script>
+    <script src="product-search.js"></script>
+    <script>
+        /*Retrive value of search from local storage and used as a parameter in search function to get search results*/
+        let value1 = JSON.parse(localStorage.getItem("value1"));
+        search(value1);
+
+        function log2(){
+            localStorage.removeItem("value1");
+            localStorage.setItem("value2", JSON.stringify(document.querySelector('.search').value));
+            let value2 = JSON.parse(localStorage.getItem("value2"));
+            search(value2);
+        }
+        
+        /*Updating cart quantity in span of cart button*/
+        Count = localStorage.getItem("count");
+        document.querySelector('.spanTag').innerHTML = `${parseInt(Count) || 0}`;
+        
+        /*Make discount list visible*/
+        function disclist(){
+            const element = document.querySelector('.discount-list-js');
+            if( element.style.display === "none"){
+                element.style.display = "block";
+                document.querySelector('.discount-js').style.color = "#f19b1a";
+            }
+            else{
+                element.style.display = "none";
+                document.querySelector('.discount-js').style.color = "white";
+            };
+        };
+        
+        /*Display max price selected from the Range Slider*/
+        function ranger(){
+            let value = (parseFloat(document.querySelector('.ranger').value) / 1000).toFixed(3);
+            let valve = (value.toString()).replace('.',',');
+            document.querySelector('.max-js').innerHTML = `max : ₹${valve}`;
+        }
+    </script>
+</body>
+</html>

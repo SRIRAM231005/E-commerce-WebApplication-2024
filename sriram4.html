@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+<body>
+    <div id="CSRS"></div>
+
+    
+    <script>
+        
+        const csrsDiv = document.getElementById('CSRS');
+        console.log('sri');
+
+        let csrs;
+    
+        // Fetch and display CSRs
+        async function fetchCSRs() {
+            const response = await fetch('http://localhost:8002/user/details');
+            csrs = await response.json();
+            console.log(csrs);
+            csrsDiv.innerHTML = '';
+                const csrElement = document.createElement('div');
+                csrElement.className = 'csr';
+                csrElement.innerHTML = `
+                <h3>${csrs.firstName}</h3>
+                <p>${csrs.email}</p>
+                <button class="out">Log out</button>
+                `;
+                csrsDiv.appendChild(csrElement);
+
+                document.querySelector('.out').addEventListener("click" , ()=>{
+                    logOut();
+                });
+
+        };
+    
+    fetchCSRs();
+
+    function logOut(){
+        console.log('hi');
+        document.getElementById('CSRS').innerHTML = "";
+    };
+
+    </script>
+</body>
+</html>
