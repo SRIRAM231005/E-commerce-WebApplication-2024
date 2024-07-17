@@ -118,7 +118,7 @@ h2{
 }
 /* here all h1 head will have color as red*/
 body{
-    background-image: url("/images/compute-ea4c57a4 (1).png");
+    background-image: url("Images/compute-ea4c57a4 (1).png");
     color: white;
     background-repeat: repeat;
     margin-left: 0;
@@ -174,7 +174,7 @@ body{
     content: '';
     position: absolute;
     background-color: #0d0216e5;
-    background-image: url('/images/blur.png');
+    background-image: url('Images/blur.png');
     border-radius: 20px;
     height: 97%;
     width: 97%;
