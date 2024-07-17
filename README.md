@@ -8,7 +8,7 @@
 - [Contacts](#contacts)
 
 ## Overview
-TechBazzar is a full-fledged e-commerce platform built using modern web technologies. This application allows users to browse products, add items to their cart, place orders, and manage user accounts. It is designed to provide a seamless shopping experience with a focus on performance and usability.  
+TechBazzar is a full-fledged e-commerce platform for Electronic Products built using modern web technologies. This application allows users to browse products, add items to their cart, place orders, and manage user accounts. It is designed to provide a seamless shopping experience with a focus on performance and usability.  
 
 ## Features
 - User authentication
