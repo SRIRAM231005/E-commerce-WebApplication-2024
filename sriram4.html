@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Orders</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styletemp1.css">
+</head>
+<body>
+    <!--Header-->
+    <div id="parent">
+        <div class="child1"><img src="/images/logo web.png" alt="Comp"></div>
+    </div>
+    <center><div id="CSRSOrder"></div></center>
+
+    
+    <script>
+        async function OrderFun(){
+            const csrsDiv = document.getElementById('CSRSOrder');
+            const response = await fetch('http://localhost:8002/user/hi');
+                const crs = await response.json();
+                console.log(crs);
+                if(crs.message === "LoginFirst"){
+                    csrsDiv.innerHTML = `<div style="font-size: 20px;">
+                                            You have not logged In<br>
+                                            <button class="see1" onclick="window.location.href = 'index.html';" style="margin: 10px;">Sign In</button>
+                                        </div>`;
+                    return;                                        
+                };
+                csrsDiv.innerHTML = '';
+                crs.forEach(csr =>{
+                    const csrElement = document.createElement('div');
+                    csrElement.className = 'csrorder';
+                    const date = new Date(csr.createdAt);
+                    //const month = (csr.createdAt).getMonth() + 1; // Months are 0-indexed
+                    //const year = (csr.createdAt).getFullYear();
+                    csrElement.innerHTML = `
+                    <div class="her" style="background-color: white; width: 1000px; color: black; border-top-left-radius: 10px;border-top-right-radius: 10px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding:10px; background-color: #d7e2f3; border-bottom: 2px solid #b5c0cf; border-top-left-radius: 10px;border-top-right-radius: 10px;">
+                        <div class="odr_date" style="margin: 0;"><div style="font-weight: bold;">Order Placed:</div><br>${date}</div>
+                        <div class="odr_id" style="margin: 0;"><div style="font-weight: bold;">Order Id:</div><br>${csr._id}</div>
+                        <div class="odr_E-mail" style="margin: 0;"><div style="font-weight: bold;">email_ID:</div><br>${csr.cEmail}</div>
+                    </div>
+                    </div>`; 
+                    csrsDiv.appendChild(csrElement);
+                    let Carts = csr.CartOrders;
+                    console.log(Carts);
+                    Carts.forEach(product =>{
+                        const productDetails = document.createElement("div");
+                        productDetails.className = "newCartItem";
+                        productDetails.innerHTML = `<div class="newCartOrder"><div>
+                                                        <img src="${product.proImage}" class="itemimg">
+                                                    </div> 
+                                                    <div class="itemDetails" style="color: black;">
+                                                        <p id="name">${product.proName}</p> 
+                                                        <p id="price"> ₹${product.proPrice}</p> 
+                                                        <div class="quanta"><div class="but">Quantity: ${product.proQuantity} </div></div>
+                                                    </div></div>`;
+                        csrElement.appendChild(productDetails);
+                    });
+                });  
+        };      
+        
+        OrderFun();
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Level 1</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!--Header-->
+    <div id="parent">
+    <div class="child1"><img src="/images/logo web.png" alt="Comp"></div>
+    <div class="child2">
+        <div><a href="index.html" style="color: #82e2eb;text-decoration: none; font-weight: 400; font-size: 22px;">Home</a></div> 
+        <div><a href="sriram2.html" style="text-decoration: none; font-weight: 400; font-size: 22px;">Products</a></div>
+        <div><a href="#" style="text-decoration: none; font-weight: 400; font-size: 22px;">Become a Seller</a></div>
+        <div><a href="#" style="text-decoration: none; font-weight: 400; font-size: 22px;">Newsletter</a></div>
+    </div>       
+    </div>
+    <!--Login Box-->
+    <center><div class="container"><div class="parent1">
+        <div id="id1" style="color: white;">Login Details</div>
+        <form id="CSRFormLog">
+        <p class="label">User Name :</p>
+        <input type="text" placeholder="User Name" onclick="alert('From 6 to 20 char')" class="input username" maxlength="20" required>
+        <p class="label">Password :</p>
+        <input type="password" placeholder="Password" class="input userpassword" maxlength="6" style="-webkit-text-security: square" required>  
+        <div style="padding-top: 10px;">
+        <a href="sriram1.html" style="color: aqua;">Forgot Password</a>
+        </div>
+        <button type="submit" id="button1">Submit</button>
+        </form>
+    </div></div></center>
+
+    <!--Register Box-->
+    <center><h2 style="font-size: 20px;">New User! then <a href="#" onclick="ShowModal();" style="color: #f19b1a; font-size: 22px; text-decoration: none;">Sign up</a></h2></center>
+    <center><dialog class="d">
+        <div class="dbox1"><img src="/images/cross.png" onclick="Close();"></div>
+        <div class="dbox2"><div class="sideBox">
+            <p>Looks like you're new<br>here!</p>
+            <div style="font-size: 20px;color:  #f19b1a;">Sign up with your <span style="color: aqua;">Email ID</span> to get started</div>
+        </div>
+        <div class="parent3">
+        <div id="id2" style="color: white;">Sign Up Details</div>
+        <form id="CSRForm">
+        <p class="label">User Name :</p>
+        <input type="text" placeholder="User Name" class="input name" maxlength="20" required>
+        <p class="label">Email ID :</p>
+        <input type="email" placeholder="email id" class="input email" maxlength="20" required>
+        <p class="label">Password :</p>
+        <input type="password" placeholder="Password" class="input passworde" maxlength="6" style="-webkit-text-security: square" required>  
+        <p class="label">Confirm Password :</p>
+        <input type="password" placeholder="Confirm Password" class="input" maxlength="6"style="-webkit-text-security: square" required>
+        </br>
+        <button type="submit" id="button2">Submit</button>
+        </form>
+    </div></div></dialog></center>
+
+    <!--Feature Box-->
+    <center><div class="features">
+        <div class="features1">
+            <div>
+                <p style="color: white;font-weight: bold;letter-spacing: 2px;">Subscribe Newsletter</p>
+                <p style="font-size: 18px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, officia? Voluptates incidunt pariatur </p>
+                <input type="email" placeholder="Enter your EmailID" class="input" style="margin-top: 15px;">
+                <br>
+                <button class="btnant">Subscribe</button>
+            </div>
+        </div>
+        <div class="features2">
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <img src="/images/emi.png" class="btnimg">
+                <img src="/images/gfcard.png" class="btnimg">
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <img src="/images/free.png" class="btnimg">
+                <img src="/images/return.png" class="btnimg">
+            </div>
+        </div>    
+    </div></center>
+
+    <!--Category Box-->
+    <center><div id="boxparent">
+        <div class="boxsrc" style="display: flex; gap: 30px; transition: 0.5s;">
+            <div class="child"><centre><div class="childimgDiv"><img src="/images/laptop.png" alt="Comp1" class="childimg"></div><div class="item">TV and Laptops</div><div class="see"><a href="sriram2.html"><button class="see1">Explore All</button></a></div></centre></div>
+            <div class="child"><centre><div class="childimgDiv"><img src="/images/tvfront.png" alt="Comp1" class="childimg"></div><div class="item">AC and fridge</div><div class="see"><a href="sriram2.html"><button class="see1">Explore All</button></a></div></centre></div>
+            <div class="child"><centre><div class="childimgDiv"><img src="/images/camerafront.png" alt="Comp1" class="childimg"></div><div class="item">Washing machines</div><div class="see"><a href="sriram2.html"><button class="see1">Explore All</button></a></div></centre></div>
+            <div class="child"><centre><div class="childimgDiv"><img src="/images/theater.png" alt="Comp1" class="childimg"></div><div class="item">Other Appliances</div><div class="see"><a href="sriram2.html"><button class="see1">Explore All</button></a></div></centre></div>
+            <div class="child"><centre><div class="childimgDiv"><img src="/images/lightfront.png" alt="Comp1" class="childimg"></div><div class="item">Other Appliances</div><div class="see"><a href="sriram2.html"><button class="see1">Explore All</button></a></div></centre></div>
+            <div class="child"><centre><div class="childimgDiv"><img src="/images/guitarfront.png" alt="Comp1" class="childimg"></div><div class="item">TV and Laptops</div><div class="see"><a href="sriram2.html"><button class="see1">Explore All</button></a></div></centre></div>
+        </div>    
+        <div class="iconright">
+            <img src="/images/iconright.png" style="height: 46px; z-index: 5;" onclick="transright();"> 
+        </div>
+        <div class="iconleft">
+            <img src="/images/iconright.png" style="height: 46px; transform: scaleX(-1); z-index: 5;" onclick="transleft();">
+        </div>  
+    </div></center> 
+    
+    <!--Popup for Login Unsuccessful-->
+    <div class="popup1 popupd1" id="popup">
+        <div class="red"></div>
+        <div style="display: flex; align-items: center; justify-content: center; margin-top: 15px;">
+            <img src="/images/icons8-crossRed.png" style="height: 25px; width: 25px; margin-right: 4px;">
+            <p style="color:#F44336; font-size: larger;font-weight: 400 ;font-family: 'Poppins',sans-serif;margin-top: 3px;margin-bottom: 0;">Login Failed</p>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer>
+        <div class="footer1">
+            <ul>
+                <p>Get Us To Know</p>
+                <a>About Us</a>
+                <a>Protect And Build</a>
+                <a>Careers</a>
+                <a>Sell on TechBazaar</a>
+            </ul>
+            <ul>
+                <p>Help</p>
+                <a>Payments</a>
+                <a>Shipping</a>
+                <a>Cancellation & Return</a>
+                <a>FAQ</a>
+                <a>Report Infringement</a>
+            </ul>
+            <ul>
+                <p>Connect With Us</p>
+                <a>Facebook</a>
+                <a>Twitter</a>
+                <a>Instagram</a>
+            </ul>
+            <ul>
+                <p>Get Us To Know</p>
+                <a>About Us</a>
+                <a>Protect And Build</a>
+                <a>Careers</a>
+                <a>Sell on TechBazaar</a>
+            </ul>
+        </div>
+        <div class="footer3">
+            <a href="sriram2.html"><img src="/images/logo web.png" alt="Comp" style="height: 70px;"></a>
+        </div>            
+        <div class="footer2">
+          <p style="font-size: 15px; font-family: 'Poppins',sans-serif; margin: 10px;">&copy; All Rights Reserved With Author: B.Sriram</p>
+          <div style="padding-bottom: 10px;"><a href="mailto:sriram.bangam@gmail.com" style="color: #f19b1a;">sriram.bangam@gmail.com</a></div>
+        </div>  
+    </footer>
+    <script>
+        /*Opens Diaogue box to Register*/
+        function Reg(){
+            document.querySelector('.parent3').style.display = "block";
+        }
+        function ShowModal(){
+            document.querySelector('.d').showModal();
+        }
+        /*Closes Dialogue box*/
+        function Close(){
+            document.querySelector('.d').close();
+        }
+
+        /*Translate on button Click*/
+        let scale = 0;
+        let rep = 1;
+        let acer ;
+        function transright(){
+            const right = document.querySelector('.iconright');
+            const srcl = document.querySelector('.boxsrc');
+            acer = rep*300;
+            if(scale > -600){
+                srcl.style.transform = `translateX(${scale - 340}px)`;
+                scale = scale - 340;
+                rep++;
+            }    
+        }
+        let lep = 1;
+        let acel = 300;
+        function transleft(){
+            const left = document.querySelector('.iconleft');
+            const srcl = document.querySelector('.boxsrc');
+            if(scale < 0){
+                srcl.style.transform = `translateX(${scale + 340}px)`;
+                scale = scale + 340;
+                lep++;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+        const csrForm = document.getElementById('CSRForm');
+
+        csrForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            let firstName= document.querySelector('.name').value;
+            let email= document.querySelector('.email').value;
+            let Password= document.querySelector('.passworde').value;
+            
+
+            try {
+            const response = await fetch('http://localhost:8002/user/details', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `firstName=${encodeURIComponent(firstName)}&email=${encodeURIComponent(email)}&Password=${encodeURIComponent(Password)}`,
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const result = await response.json();
+            window.location.href= 'index.html';
+            console.log('Success:', result);
+            csrForm.reset();
+            } catch (error) {
+            console.error('Error:', error);
+            }
+        });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+        const csrFormLog = document.getElementById('CSRFormLog');
+
+        csrFormLog.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            let UserName= document.querySelector('.username').value;
+            let UserPassword= document.querySelector('.userpassword').value;
+            
+
+            try {
+            const response = await fetch('http://localhost:8002/user/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `UserName=${encodeURIComponent(UserName)}&UserPassword=${encodeURIComponent(UserPassword)}`,
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const result = await response.json();
+            if(result.message === "notFound"){
+                console.log("notFoundUser");
+                /*Function to show popup for a set time*/
+                var popup = document.getElementById('popup');
+                var popupButton = document.querySelector('.see1');
+  
+                function Popup() {
+                    popup.classList.add('show1');
+                    setTimeout(function() {
+                     popup.classList.remove('show1');
+                }, 3000); // Adjust the delay (in milliseconds) as per requirement
+                };
+                Popup();
+            }else{
+                console.log("LoginSuccessful");
+                const hey = document.getElementById('button1');
+                window.location.href= 'sriram2.html';
+            };
+            console.log('Success:', result);
+            csrFormLog.reset();
+            } catch (error) {
+            console.error('Error:', error);
+            }
+        });
+        });
+ 
+
+    </script>    
+</body>
+</html>
+
+

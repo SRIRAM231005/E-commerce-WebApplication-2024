@@ -1,0 +1,24 @@
+body{
+    background-image: url("/images/compute-ea4c57a4 (1).png");
+    color: white;
+}
+.csrorder{
+    background-color: white;
+    width: 1000px;
+    border: 2px solid #b5c0cf;
+    border-radius: 10px;
+    margin: 20px;
+}
+.newCartOrder{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.116);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 23px;
+    padding-right: 23px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    text-align: left;
+}
